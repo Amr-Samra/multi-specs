@@ -1,0 +1,26 @@
+{
+    "name": "Bdwey/Specs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amr Samra",
+            "email": "amr.samra88@icloud.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Marvel\\Specs\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Marvel\\Specs\\": "tests/"
+        }
+    },
+    "require": {
+        "illuminate/support" : "~5",
+        "php" : "~5.6|~7.0"
+    }
+}
