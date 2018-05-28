@@ -1,5 +1,5 @@
 {
-    "name": "Bdwey/Specs",
+    "name": "bdwey/specs",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,12 +11,12 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Marvel\\Specs\\": "src/"
+            "Bdwey\\Specs\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Marvel\\Specs\\": "tests/"
+            "Bdwey\\Specs\\": "tests/"
         }
     },
     "require": {

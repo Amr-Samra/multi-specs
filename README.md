@@ -6,7 +6,7 @@ package handle multi-options specs for products , services and more
 Add to Composer
 
 ``` bash
-
+"bdwey/specs": "dev-master",
 ```
 
 
