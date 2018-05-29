@@ -53,12 +53,6 @@ class SpecsSettingsTableSeeder extends Seeder
                     'description' => 'Validation types of Specs`s values'
                 ],
                 [
-                    'key'         => 'string',
-                    'value'       => 'اختيار واحد من متعدد',
-                    'group'       => 'types',
-                    'description' => 'Validation types of Specs`s values'
-                ],
-                [
                     'key'         => 'array',
                     'value'       => 'اختيار اكتر من قيمة من متعدد',
                     'group'       => 'types',
@@ -66,7 +60,7 @@ class SpecsSettingsTableSeeder extends Seeder
                 ],
                 [
                     'key'         => 'category',
-                    'value'       => '\App\Category',
+                    'value'       => '\App\Models\Categories',
                     'group'       => 'models',
                     'description' => 'Category Model Path for relationship'
                 ],
