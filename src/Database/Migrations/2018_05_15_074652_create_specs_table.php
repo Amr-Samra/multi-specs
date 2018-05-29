@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterCreateSpecsTable extends Migration
+class CreateSpecsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class AlterCreateSpecsTable extends Migration
      */
     public function up()
     {
-        Schema::table('specs', function (Blueprint $table) {
-            // $table->dropColumn(['view_type', 'highlighted']);
-            $table->renameColumn('option_values', 'options');
-            $table->renameColumn('validation_rules', 'details');
-            
+        Schema::create('specs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('type');
+            $table->string('key')->unique();
             $table->boolean('is_required')->default(0);
+            $table->string('default')->nullable();
+            $table->string('options')->nullable();
             $table->integer('order')->default(1);
             $table->boolean('is_active')->default(1);
+            $table->string('details')->nullable();
+            $table->timestamps();
         });
     }
 
