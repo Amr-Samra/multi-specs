@@ -35,7 +35,6 @@ class SpecsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Bdwey\Specs\Http\SpecsController');
-        $this->app->make('Bdwey\Specs\Http\SpecsApiController');
+        // $this->app->make('Bdwey\Specs\Http\SpecsController');
     }
 }
