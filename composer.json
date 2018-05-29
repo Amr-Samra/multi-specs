@@ -1,5 +1,6 @@
 {
     "name": "bdwey/specs",
+    "description": "package handle multi-options specs for products , services and more",
     "type": "library",
     "license": "MIT",
     "authors": [
