@@ -1,6 +1,5 @@
 <?php
 
-Route::group(['middleware' => 'guest' ,"namespace" => "Bdwey\Specs\Http"],function () {
-
-    // Route::get('/tests', 'SpecsController@index');
+Route::group(['middleware' => 'api' ,"namespace" => "Bdwey\Specs\Http\Controllers"],function () {
+    Route::get('/api/getspecs/{spec}', 'SpecsController@index');
 });

@@ -4,6 +4,7 @@ namespace Bdwey\Specs\Traits;
 
 use Bdwey\Specs\Model\Specs;
 use Bdwey\Specs\Model\SpecsSettings;
+use Bdwey\Specs\Model\SpecsItems;
 
 trait Assistant
 {
@@ -187,7 +188,7 @@ trait Assistant
     public static function getSpecsDataByGroupId($spec_id)
     {
         $specs = [];
-        $group = \Bdwey\Specs\Model\SpecsItems::find($spec_id);
+        $group = SpecsItems::find($spec_id);
         if($group) {
             $specs[$group->id] = $group->fetchSpecsGroup();
         }
