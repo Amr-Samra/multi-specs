@@ -33,20 +33,20 @@ class SpecsController extends FrontendBaseController
                     $data[$key]['spec_id'] = $value->spec->id;
                     $data[$key]['name'] = $value->spec->name;
                 }
+                $active = $this->is_active($selected, $specsable, $value->value);
+                $select = $this->is_selected($selected, $active, $value);
                 $data[$key]['data'][] = [
                     'value'     => $value->value,
-                    'active'    => $this->is_active($selected, $specsable, $value->value),
-                    'selected'  => ($selected && isset($selected[$value->spec->id]) && $selected[$value->spec->id] == $value->value) ? 1 : 0
+                    'active'    => $active,
+                    'selected'  => $select
                 ];
             }
         }
-        if(is_array($data)) {
-            foreach($data as $l_key =>$array) {
-                if(is_array($array)) {
-                    foreach($array as $m_key => $one) {
-                        if(is_array($one)) {
-                            $data[$l_key][$m_key] = collect($one)->unique('value');
-                        }
+        foreach($data as $l_key =>$array) {
+            if(is_array($array)) {
+                foreach($array as $m_key => $one) {
+                    if(is_array($one)) {
+                        $data[$l_key][$m_key] = collect($one)->unique('value');
                     }
                 }
             }
@@ -102,6 +102,16 @@ class SpecsController extends FrontendBaseController
         $active = array_unique($active);
         if(in_array($val, $active)) {
             return 1;
+        }
+        return 0;
+    }
+
+    private function is_selected($selected, $active, $value)
+    {
+        if($active) {
+            if(isset($selected[$value->spec->id]) && $selected[$value->spec->id] == $value->value) {
+                return 1;
+            }
         }
         return 0;
     }
